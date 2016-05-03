@@ -8,7 +8,14 @@
 Icon?
 ehthumbs.db
 Thumbs.db
+
+# Phirehose          #
+######################
 lib/Phirehose/phirehose/example/*
 lib/Phirehose/phirehose/composer.json
 lib/Phirehose/phirehose/Readme.md
 lib/Phirehose/phirehose/.git*
+
+# Custom config file #
+######################
+config.php
