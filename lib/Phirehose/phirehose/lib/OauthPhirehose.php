@@ -1,6 +1,5 @@
 <?php
-
-require_once(__DIR__ . '/Phirehose.class.php');
+require_once('Phirehose.php');
 
 /**
 *
@@ -34,7 +33,7 @@ abstract class OauthPhirehose extends Phirehose
 		if (empty($method) || empty($url))
 			return false;
 
-		$oauth['oauth_consumer_key'] = $this->consumerKey?$this->consumerKey:\OpenFuego\TWITTER_CONSUMER_KEY;
+		$oauth['oauth_consumer_key'] = $this->consumerKey?$this->consumerKey:TWITTER_CONSUMER_KEY;
 		$oauth['oauth_nonce'] = md5(uniqid(rand(), true));
 		$oauth['oauth_signature_method'] = 'HMAC-SHA1';
 		$oauth['oauth_timestamp'] = time();
@@ -122,7 +121,7 @@ abstract class OauthPhirehose extends Phirehose
 		$signatureBaseString = "{$method}&{$normalizedUrl}&{$concatenatedParams}";
 
 		# sign the signature string
-		$key = $this->encode_rfc3986($this->consumerSecret?$this->consumerSecret:\OpenFuego\TWITTER_CONSUMER_SECRET) . '&' . $this->encode_rfc3986($this->password);
+		$key = $this->encode_rfc3986($this->consumerSecret?$this->consumerSecret:TWITTER_CONSUMER_SECRET) . '&' . $this->encode_rfc3986($this->password);
 		return base64_encode(hash_hmac('sha1', $signatureBaseString, $key, true));
 	}
 
