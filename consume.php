@@ -8,8 +8,8 @@ use OpenFuego\lib\DbHandle as DbHandle;
 use OpenFuego\app\Consumer as Consumer;
 use OpenFuego\lib\Logger as Logger;
 
-if (!defined('PHP_VERSION_ID') || PHP_VERSION_ID < 50300) {
-	die(__NAMESPACE__ . ' requires PHP 5.3.0 or higher.');
+if (!defined('PHP_VERSION_ID') || PHP_VERSION_ID < 50608) {
+	die(__NAMESPACE__ . ' requires PHP 5.6.9 or higher.');
 }
 
 if (php_sapi_name() != 'cli') {

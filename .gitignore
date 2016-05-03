@@ -19,3 +19,8 @@ lib/Phirehose/phirehose/.git*
 # Custom config file #
 ######################
 config.php
+
+# TwitterOAuth #
+###############
+!lib/TwitterOAuth/twitteroauth/src
+lib/TwitterOAuth/twitteroauth/*

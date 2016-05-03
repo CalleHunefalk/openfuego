@@ -9,8 +9,8 @@
   * Gracias.
 **/
 
-if (!defined('PHP_VERSION_ID') || PHP_VERSION_ID < 50300) {
-	die(__NAMESPACE__ . ' requires PHP 5.3.0 or higher.');
+if (!defined('PHP_VERSION_ID') || PHP_VERSION_ID < 50608) {
+	die(__NAMESPACE__ . ' requires PHP 5.6.9 or higher.');
 }
 
 define('OPENFUEGO', TRUE);
@@ -33,18 +33,51 @@ else {
 	ini_set('display_errors', 0);
 }
 
-require_once(__DIR__ . '/lib/TwitterOAuth/TwitterOAuth.class.php');
-require_once(__DIR__ . '/lib/Phirehose/OAuthPhirehose.class.php');
+fwrite(STDOUT, "Class name TwitterOAuth");
+
+require_once(__DIR__ . '/lib/TwitterOAuth/TwitterOAuth.php');
+require_once(__DIR__ . '/lib/Phirehose/UserstreamPhirehose.php');
 
 spl_autoload_register(function($className) {
-	$className = str_replace('OpenFuego' . '\\', '', $className);
-	$className = strtr($className, '\\', DIRECTORY_SEPARATOR);	
-	$path = __DIR__ . '/' . $className . '.class.php';
+	    // project-specific namespace prefix
+		$prefix = 'Abraham\\TwitterOAuth\\';
+fwrite(STDOUT, "Class name $className");
+		// base directory for the namespace prefix
+		$base_dir = __DIR__ . '/lib/TwitterOAuth/';
 
-	if (is_readable($path)) {
-		include_once($path);
-	}
+		// does the class use the namespace prefix?
+		$len = strlen($prefix);
+		
+		// Check first for TwitterOAuth
+		if (strncmp($prefix, $class, $len) !== 0) {
+			$className = str_replace('OpenFuego' . '\\', '', $className);
+			$className = strtr($className, '\\', DIRECTORY_SEPARATOR);	
+			$path = __DIR__ . '/' . $className . '.class.php';
+
+			if (is_readable($path)) {
+				include_once($path);
+			}
+		}
+		else
+		{
+			// TwitterOAuth namespace
+			// get the relative class name
+			$relative_class = substr($className, $len);
+
+			// replace the namespace prefix with the base directory, replace namespace
+			// separators with directory separators in the relative class name, append
+			// with .php
+			$file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
+
+			// if the file exists, require it
+			if (file_exists($file)) {
+				require $file;
+			}
+		}
+		
+
 });
+
 
 /* Setting miscellaneous constants */
 define(__NAMESPACE__ . '\BASE_DIR', __DIR__);

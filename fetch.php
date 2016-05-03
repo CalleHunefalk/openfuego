@@ -2,7 +2,7 @@
 
 use OpenFuego\lib\Logger as Logger;
 
-if (!defined('PHP_VERSION_ID') || PHP_VERSION_ID < 50609) {
+if (!defined('PHP_VERSION_ID') || PHP_VERSION_ID < 50608) {
 	die(__NAMESPACE__ . ' requires PHP 5.6.9 or higher.');
 }
 
