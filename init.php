@@ -33,15 +33,13 @@ else {
 	ini_set('display_errors', 0);
 }
 
-fwrite(STDOUT, "Class name TwitterOAuth");
-
 require_once(__DIR__ . '/lib/TwitterOAuth/TwitterOAuth.php');
 require_once(__DIR__ . '/lib/Phirehose/UserstreamPhirehose.php');
 
 spl_autoload_register(function($className) {
 	    // project-specific namespace prefix
 		$prefix = 'Abraham\\TwitterOAuth\\';
-fwrite(STDOUT, "Class name $className");
+
 		// base directory for the namespace prefix
 		$base_dir = __DIR__ . '/lib/TwitterOAuth/';
 
