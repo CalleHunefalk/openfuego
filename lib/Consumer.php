@@ -1,4 +1,6 @@
 <?php namespace CalleHunefalk\OpenFuego;
+require_once __DIR__ . "/../vendor/autoload.php";
+
 
 use CalleHunefalk\OpenFuego\UrlExpander as UrlExpander;
 use CalleHunefalk\OpenFuego\DbHandle as DbHandle;
@@ -19,7 +21,7 @@ class Consumer {
 	/**
 	 * Construct the consumer and start processing
 	 */
-	public function __construct($queueDir = \OpenFuego\TMP_DIR, $filePattern = 'CollectorQueue*.queue', $checkInterval = 10) {
+	public function __construct($queueDir = \CalleHunefalk\OpenFuego\TMP_DIR, $filePattern = 'CollectorQueue*.queue', $checkInterval = 10) {
 		$this->_queueDir = $queueDir;
 		$this->_filePattern = $filePattern;
 		$this->_checkInterval = $checkInterval;
@@ -227,7 +229,7 @@ class Consumer {
 	
 
 	public function cleanUp() {	
-		$expiration_days = \OpenFuego\EXPIRATION_DAYS;
+		$expiration_days = \CalleHunefalk\OpenFuego\EXPIRATION_DAYS;
 		$now = time();
 		$date = date('Y-m-d H:i:s', $now);
 		

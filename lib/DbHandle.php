@@ -1,4 +1,6 @@
 <?php namespace CalleHunefalk\OpenFuego;
+require_once __DIR__ . "/../vendor/autoload.php";
+
 
 class DbHandle extends \PDO {
 	
@@ -6,12 +8,12 @@ class DbHandle extends \PDO {
 		
 		$dsn = \CalleHunefalk\OpenFuego\DB_DRIVER
 		. ":host=" . \CalleHunefalk\OpenFuego\DB_HOST
-		. ';port=' . \OpenFuego\DB_PORT
+		. ';port=' . \CalleHunefalk\OpenFuego\DB_PORT
 		. ';dbname=' . \CalleHunefalk\OpenFuego\DB_NAME
 		. ';';
 
 		try {
-	        parent::__construct($dsn, \OpenFuego\DB_USER, \OpenFuego\DB_PASS, array(
+	        parent::__construct($dsn, \CalleHunefalk\OpenFuego\DB_USER, \CalleHunefalk\OpenFuego\DB_PASS, array(
 				\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8' COLLATE 'utf8_unicode_ci';",
 				\PDO::ATTR_PERSISTENT => true
 			));

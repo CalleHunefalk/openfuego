@@ -1,4 +1,5 @@
 <?php namespace CalleHunefalk\OpenFuego;
+
 /**
   * Do not run this file directly.
   * Edit config.php to set up the application.

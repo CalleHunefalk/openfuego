@@ -1,5 +1,6 @@
 <?php namespace CalleHunefalk\OpenFuego;
 
+
 use CalleHunefalk\OpenFuego\Logger as Logger;
 
 if (!defined('PHP_VERSION_ID') || PHP_VERSION_ID < 50608) {

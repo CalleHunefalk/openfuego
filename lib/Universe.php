@@ -1,4 +1,6 @@
 <?php namespace CalleHunefalk\OpenFuego;
+require_once __DIR__ . "/../vendor/autoload.php";
+
 
 use CalleHunefalk\OpenFuego\TwitterHandle as TwitterHandle;
 use CalleHunefalk\OpenFuego\DbHandle as DbHandle;
@@ -47,7 +49,7 @@ class Universe {
 			die($error_message);
 		}
 	
-		$owner_screen_name = \OpenFuego\TWITTER_SCREEN_NAME;
+		$owner_screen_name = \CalleHunefalk\OpenFuego\TWITTER_SCREEN_NAME;
 	
 		$twitter = new TwitterHandle();
 		

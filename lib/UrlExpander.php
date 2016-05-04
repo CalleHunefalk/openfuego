@@ -1,4 +1,6 @@
 <?php namespace CalleHunefalk\OpenFuego;
+require_once __DIR__ . "/../vendor/autoload.php";
+
 
 class UrlExpander {
 
@@ -20,16 +22,16 @@ class UrlExpander {
 		$this->_bitly_pro_domains = unserialize(\OpenFuego\BITLY_PRO_DOMAINS);
 		$this->_short_domains = unserialize(\OpenFuego\SHORT_DOMAINS);
 
-		if (defined('\OpenFuego\BITLY_USERNAME')) {
-			 $this->_bitly_username = \OpenFuego\BITLY_USERNAME;
+		if (defined('\CalleHunefalk\OpenFuego\BITLY_USERNAME')) {
+			 $this->_bitly_username = \CalleHunefalk\OpenFuego\BITLY_USERNAME;
 		}
 		
-		if (defined('\OpenFuego\BITLY_API_KEY')) {
-			$this->_bitly_api_key = \OpenFuego\BITLY_API_KEY;
+		if (defined('\CalleHunefalk\OpenFuego\BITLY_API_KEY')) {
+			$this->_bitly_api_key = \CalleHunefalk\OpenFuego\BITLY_API_KEY;
 		}
 
-		if (defined('\OpenFuego\GOOGL_API_KEY')) {
-			$this->_googl_api_key = \OpenFuego\GOOGL_API_KEY;
+		if (defined('\CalleHunefalk\OpenFuego\GOOGL_API_KEY')) {
+			$this->_googl_api_key = \CalleHunefalk\OpenFuego\GOOGL_API_KEY;
 		}
 	}
 

@@ -1,4 +1,6 @@
 <?php namespace CalleHunefalk\OpenFuego;
+require_once __DIR__ . "/../vendor/autoload.php";
+
 
 class Curl {
 
@@ -21,8 +23,8 @@ class Curl {
 
 		/* Options common to all requests */
 		$this->_options = array(
-		 		CURLOPT_USERAGENT => \OpenFuego\USER_AGENT,
-				CURLOPT_REFERER => \OpenFuego\REFERRER,
+		 		CURLOPT_USERAGENT => \CalleHunefalk\OpenFuego\USER_AGENT,
+				CURLOPT_REFERER => \CalleHunefalk\OpenFuego\REFERRER,
 				CURLOPT_CONNECTTIMEOUT => 15,
 				CURLOPT_TIMEOUT => 15,
 				CURLOPT_RETURNTRANSFER => TRUE,

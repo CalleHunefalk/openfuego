@@ -1,4 +1,6 @@
 <?php namespace CalleHunefalk\OpenFuego;
+require_once __DIR__ . "/../vendor/autoload.php";
+
 
 class Logger {
 	
@@ -53,7 +55,7 @@ class Logger {
 	}
 	
 	private static function notify($subject, $message) {
-		mail(\OpenFuego\WEBMASTER, $subject, $message, 'From: ' . \CalleHunefalk\OpenFuego\POSTMASTER);
+		mail(\CalleHunefalk\OpenFuego\WEBMASTER, $subject, $message, 'From: ' . \CalleHunefalk\OpenFuego\POSTMASTER);
 	}
 	
 	private static function getTimestamp() {

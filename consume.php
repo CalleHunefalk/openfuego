@@ -1,5 +1,6 @@
 <?php namespace CalleHunefalk\OpenFuego;
 
+
 /** This script processes the data placed
   * in the queue by collect.php.
 **/

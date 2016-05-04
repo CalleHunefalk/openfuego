@@ -1,8 +1,7 @@
 <?php namespace CalleHunefalk\OpenFuego;
+require_once __DIR__ . "/../vendor/autoload.php";
 
-use Abraham\TwitterOAuth;
-
-class TwitterHandle extends TwitterOAuth {
+class TwitterHandle extends \Abraham\TwitterOAuth\TwitterOAuth {
 
 	private $consumerKey;
 	private $consumerSecret;
@@ -11,10 +10,10 @@ class TwitterHandle extends TwitterOAuth {
 
 	public function __construct() {
 
-		$this->consumerKey = \OpenFuego\TWITTER_CONSUMER_KEY;
-		$this->consumerSecret = \OpenFuego\TWITTER_CONSUMER_SECRET;
-		$this->accessToken = \OpenFuego\TWITTER_OAUTH_TOKEN;
-		$this->accessTokenSecret = \OpenFuego\TWITTER_OAUTH_SECRET;
+		$this->consumerKey = \CalleHunefalk\OpenFuego\TWITTER_CONSUMER_KEY;
+		$this->consumerSecret = \CalleHunefalk\OpenFuego\TWITTER_CONSUMER_SECRET;
+		$this->accessToken = \CalleHunefalk\OpenFuego\TWITTER_OAUTH_TOKEN;
+		$this->accessTokenSecret = \CalleHunefalk\OpenFuego\TWITTER_OAUTH_SECRET;
 		
 		try {
 			parent::__construct(
@@ -31,27 +30,27 @@ class TwitterHandle extends TwitterOAuth {
 	}
 	
 	// Overloading TwitterOAuth's get(), post(), delete() methods to decode JSON as array
-	public function get($url, $parameters = array()) {
-		$response = $this->oAuthRequest($url, 'GET', $parameters);
-		if ($this->format === 'json' && $this->decode_json) {
-			return json_decode($response, TRUE);
-		}
-		return $response;
-	}
+	// public function get($url, $parameters = array()) {
+		// $response = $this->oAuthRequest($url, 'GET', $parameters);
+		// if ($this->format === 'json' && $this->decode_json) {
+			// return json_decode($response, TRUE);
+		// }
+		// return $response;
+	// }
 	
-	function post($url, $parameters = array()) {
-		$response = $this->oAuthRequest($url, 'POST', $parameters);
-		if ($this->format === 'json' && $this->decode_json) {
-			return json_decode($response, TRUE);
-		}
-		return $response;
-	}
+	// function post($url, $parameters = array()) {
+		// $response = $this->oAuthRequest($url, 'POST', $parameters);
+		// if ($this->format === 'json' && $this->decode_json) {
+			// return json_decode($response, TRUE);
+		// }
+		// return $response;
+	// }
 	
-	function delete($url, $parameters = array()) {
-		$response = $this->oAuthRequest($url, 'DELETE', $parameters);
-		if ($this->format === 'json' && $this->decode_json) {
-			return json_decode($response, TRUE);
-		}
-		return $response;
-	}
+	// function delete($url, $parameters = array()) {
+		// $response = $this->oAuthRequest($url, 'DELETE', $parameters);
+		// if ($this->format === 'json' && $this->decode_json) {
+			// return json_decode($response, TRUE);
+		// }
+		// return $response;
+	// }
 }

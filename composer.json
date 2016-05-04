@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "CalleHunefalk\\OpenFuego\\": "lib"
+            "CalleHunefalk\\OpenFuego\\": "lib/"
         }
     },
     "require": {

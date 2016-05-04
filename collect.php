@@ -1,5 +1,6 @@
 <?php namespace CalleHunefalk\OpenFuego;
 
+
 /** This script connects to the Twitter stream
   * and captures raw data into a queue for processing.
 **/
@@ -32,14 +33,14 @@ register_shutdown_function(function() {
 
 $twitter = new TwitterHandle();
 $twitter->get("account/verify_credentials", array("include_entities" => 0, "skip_status" => 1));
-if ($twitter->http_code !== 200) {
-	$error_message = "Cannot continue. Your Twitter credentials appear to be invalid. Error code {$twitter->http_code}";
+if ($twitter->getLastHttpCode() !== 200) {
+	$error_message = "Cannot continue. Your Twitter credentials appear to be invalid. Error code {$twitter->getLastHttpCode()}";
 	Logger::info($error_message);
 	die($error_message);
 }
 unset($twitter_handle);
 
-$authorities = unserialize(\OpenFuego\AUTHORITIES);
+$authorities = unserialize(\CalleHunefalk\OpenFuego\AUTHORITIES);
 
 $universe = new Universe();
 

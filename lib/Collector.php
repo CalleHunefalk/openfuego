@@ -1,4 +1,6 @@
 <?php namespace CalleHunefalk\OpenFuego;
+require_once __DIR__ . "/../vendor/autoload.php";
+
 
 class Collector extends \OauthPhirehose {
 	/**
@@ -26,7 +28,7 @@ class Collector extends \OauthPhirehose {
 	* @param integer $rotateInterval
 	*/
 
-	public function __construct($token, $secret, $queueDir = \OpenFuego\TMP_DIR, $rotateInterval = 10) {
+	public function __construct($token, $secret, $queueDir = \CalleHunefalk\OpenFuego\TMP_DIR, $rotateInterval = 10) {
 	
 		// Set subclass parameters
 		$this->queueDir = $queueDir;

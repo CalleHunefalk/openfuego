@@ -1,4 +1,6 @@
 <?php namespace CalleHunefalk\OpenFuego;
+require_once __DIR__ . "/../vendor/autoload.php";
+
 
 use CalleHunefalk\OpenFuego\DbHandle as DbHandle;
 use CalleHunefalk\OpenFuego\Metadata as Metadata;
@@ -117,7 +119,7 @@ class Getter {
 		
 		$items_filtered = array_slice($items_filtered, 0, $quantity);
 	
-		if ($metadata && defined('\OpenFuego\EMBEDLY_API_KEY') && \OpenFuego\EMBEDLY_API_KEY) {
+		if ($metadata && defined('\CalleHunefalk\OpenFuego\EMBEDLY_API_KEY') && \CalleHunefalk\OpenFuego\EMBEDLY_API_KEY) {
 	
 			$metadata_params = is_array($metadata) ? $metadata : NULL;
 			

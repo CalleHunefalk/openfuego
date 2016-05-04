@@ -1,4 +1,6 @@
 <?php namespace CalleHunefalk\OpenFuego;
+require_once __DIR__ . "/../vendor/autoload.php";
+
 
 class Metadata {
 
@@ -10,9 +12,9 @@ class Metadata {
 
 	public function __construct() {
 		$this->_apiRoot = 'http://api.embed.ly/1';
-		$this->_endpoint = defined('\OpenFuego\EMBEDLY_API_ENDPOINT') ? \OpenFuego\EMBEDLY_API_ENDPOINT : 'oembed';
-		if (defined('\OpenFuego\EMBEDLY_API_KEY')) {
-			$this->_apiKey = \OpenFuego\EMBEDLY_API_KEY;
+		$this->_endpoint = defined('\CalleHunefalk\OpenFuego\EMBEDLY_API_ENDPOINT') ? \CalleHunefalk\OpenFuego\EMBEDLY_API_ENDPOINT : 'oembed';
+		if (defined('\CalleHunefalk\OpenFuego\EMBEDLY_API_KEY')) {
+			$this->_apiKey = \CalleHunefalk\OpenFuego\EMBEDLY_API_KEY;
 		}
 	}
 	
