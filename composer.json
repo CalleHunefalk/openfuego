@@ -1,0 +1,29 @@
+{
+    "name": "callehunefalk/openfuego",
+    "description": "A PHP interface to the Twitter Streaming API.",
+    "keywords": ["openfuego", "php", "twitter", "streaming", "api"],
+    "type": "library",
+    "homepage": "https://github.com/callehunefalk/openfuego",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Calle Hunefalk",
+            "homepage": "http://callehunefalk.com/",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "source": "https://github.com/callehunefalk/openfuego",
+        "issues": "https://github.com/callehunefalk/openfuego/issues"
+    },
+    "autoload": {
+        "psr-4": {
+            "CalleHunefalk\\OpenFuego\\": "lib"
+        }
+    },
+    "require": {
+        "php": ">=5.6.9",
+        "abraham/twitteroauth": "^0.6.4",
+        "fennb/phirehose": "^1.0"
+    }
+}

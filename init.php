@@ -1,4 +1,4 @@
-<?php namespace OpenFuego;
+<?php namespace CalleHunefalk\OpenFuego;
 /**
   * Do not run this file directly.
   * Edit config.php to set up the application.
@@ -25,7 +25,7 @@ else {
 	define(__NAMESPACE__ . '\VERBOSE', FALSE);
 }
 
-if (\OpenFuego\VERBOSE == TRUE) {
+if (\CalleHunefalk\OpenFuego\VERBOSE == TRUE) {
 	ini_set('display_errors', 1);
 	ini_set('error_reporting', E_ALL);
 }
@@ -33,47 +33,19 @@ else {
 	ini_set('display_errors', 0);
 }
 
-require_once(__DIR__ . '/lib/TwitterOAuth/TwitterOAuth.php');
-require_once(__DIR__ . '/lib/Phirehose/UserstreamPhirehose.php');
+require __DIR__ . '/vendor/autoload.php';
+// Now included via composer
+//require_once(__DIR__ . '/lib/TwitterOAuth/TwitterOAuth.php');
+//require_once(__DIR__ . '/lib/Phirehose/UserstreamPhirehose.php');
 
 spl_autoload_register(function($className) {
-	    // project-specific namespace prefix
-		$prefix = 'Abraham\\TwitterOAuth\\';
+		$className = str_replace('OpenFuego' . '\\', '', $className);
+		$className = strtr($className, '\\', DIRECTORY_SEPARATOR);	
+		$path = __DIR__ . '/' . $className . '.class.php';
 
-		// base directory for the namespace prefix
-		$base_dir = __DIR__ . '/lib/TwitterOAuth/';
-
-		// does the class use the namespace prefix?
-		$len = strlen($prefix);
-		
-		// Check first for TwitterOAuth
-		if (strncmp($prefix, $class, $len) !== 0) {
-			$className = str_replace('OpenFuego' . '\\', '', $className);
-			$className = strtr($className, '\\', DIRECTORY_SEPARATOR);	
-			$path = __DIR__ . '/' . $className . '.class.php';
-
-			if (is_readable($path)) {
-				include_once($path);
-			}
+		if (is_readable($path)) {
+			include_once($path);
 		}
-		else
-		{
-			// TwitterOAuth namespace
-			// get the relative class name
-			$relative_class = substr($className, $len);
-
-			// replace the namespace prefix with the base directory, replace namespace
-			// separators with directory separators in the relative class name, append
-			// with .php
-			$file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
-
-			// if the file exists, require it
-			if (file_exists($file)) {
-				require $file;
-			}
-		}
-		
-
 });
 
 

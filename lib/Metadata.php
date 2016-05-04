@@ -1,4 +1,4 @@
-<?php namespace OpenFuego\lib;
+<?php namespace CalleHunefalk\OpenFuego;
 
 class Metadata {
 

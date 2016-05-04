@@ -1,9 +1,9 @@
-<?php namespace OpenFuego\app;
+<?php namespace CalleHunefalk\OpenFuego;
 
-use OpenFuego\lib\UrlExpander as UrlExpander;
-use OpenFuego\lib\DbHandle as DbHandle;
-use OpenFuego\app\Universe as Universe;
-use OpenFuego\lib\Logger as Logger;
+use CalleHunefalk\OpenFuego\UrlExpander as UrlExpander;
+use CalleHunefalk\OpenFuego\DbHandle as DbHandle;
+use CalleHunefalk\OpenFuego\Universe as Universe;
+use CalleHunefalk\OpenFuego\Logger as Logger;
 
 class Consumer {
 	
@@ -109,7 +109,7 @@ class Consumer {
 		
 			/* Weed out statuses created by undesired user. (The streaming API also returns _retweets of_
 			** statuses by desired user, which we don't want.) */
-			if (!\OpenFuego\app\Universe::isCitizen($status['user']['id_str'])) {	// if the tweeter is not a citizen
+			if (!\CalleHunefalk\OpenFuego\Universe::isCitizen($status['user']['id_str'])) {	// if the tweeter is not a citizen
 				continue; // skip it
 			}			
 

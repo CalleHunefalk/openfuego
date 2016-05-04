@@ -13,7 +13,7 @@
   * @version 1.0
   */
 
-namespace OpenFuego;
+namespace CalleHunefalk\OpenFuego;
 
 /* Your time zone. Harvard time is 'America/New_York'.
  * http://php.net/manual/en/timezones.php

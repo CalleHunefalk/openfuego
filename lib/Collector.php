@@ -1,4 +1,4 @@
-<?php namespace OpenFuego\app;
+<?php namespace CalleHunefalk\OpenFuego;
 
 class Collector extends \OauthPhirehose {
 	/**

@@ -1,13 +1,13 @@
-<?php namespace OpenFuego\lib;
+<?php namespace CalleHunefalk\OpenFuego;
 
 class DbHandle extends \PDO {
 	
 	public function __construct() {
 		
-		$dsn = \OpenFuego\DB_DRIVER
-		. ":host=" . \OpenFuego\DB_HOST
+		$dsn = \CalleHunefalk\OpenFuego\DB_DRIVER
+		. ":host=" . \CalleHunefalk\OpenFuego\DB_HOST
 		. ';port=' . \OpenFuego\DB_PORT
-		. ';dbname=' . \OpenFuego\DB_NAME
+		. ';dbname=' . \CalleHunefalk\OpenFuego\DB_NAME
 		. ';';
 
 		try {

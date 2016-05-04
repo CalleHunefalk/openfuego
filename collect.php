@@ -1,13 +1,13 @@
-<?php namespace OpenFuego;
+<?php namespace CalleHunefalk\OpenFuego;
 
 /** This script connects to the Twitter stream
   * and captures raw data into a queue for processing.
 **/
 
-use OpenFuego\app\Universe as Universe;
-use OpenFuego\app\Collector as Collector;
-use OpenFuego\lib\Logger as Logger;
-use OpenFuego\lib\TwitterHandle as TwitterHandle;
+use CalleHunefalk\OpenFuego\Universe as Universe;
+use CalleHunefalk\OpenFuego\Collector as Collector;
+use CalleHunefalk\OpenFuego\Logger as Logger;
+use CalleHunefalk\OpenFuego\TwitterHandle as TwitterHandle;
 
 if (!defined('PHP_VERSION_ID') || PHP_VERSION_ID < 50608) {
 	die(__NAMESPACE__ . ' requires PHP 5.6.9 or higher.');

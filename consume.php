@@ -1,12 +1,12 @@
-<?php namespace OpenFuego;
+<?php namespace CalleHunefalk\OpenFuego;
 
 /** This script processes the data placed
   * in the queue by collect.php.
 **/
 
-use OpenFuego\lib\DbHandle as DbHandle;
-use OpenFuego\app\Consumer as Consumer;
-use OpenFuego\lib\Logger as Logger;
+use CalleHunefalk\OpenFuego\DbHandle as DbHandle;
+use CalleHunefalk\OpenFuego\Consumer as Consumer;
+use CalleHunefalk\OpenFuego\Logger as Logger;
 
 if (!defined('PHP_VERSION_ID') || PHP_VERSION_ID < 50608) {
 	die(__NAMESPACE__ . ' requires PHP 5.6.9 or higher.');

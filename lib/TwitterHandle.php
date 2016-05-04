@@ -1,6 +1,8 @@
-<?php namespace OpenFuego\lib;
+<?php namespace CalleHunefalk\OpenFuego;
 
-class TwitterHandle extends \Abraham\TwitterOAuth {
+use Abraham\TwitterOAuth;
+
+class TwitterHandle extends TwitterOAuth {
 
 	private $consumerKey;
 	private $consumerSecret;

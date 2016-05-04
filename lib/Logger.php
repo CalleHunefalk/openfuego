@@ -1,8 +1,8 @@
-<?php namespace OpenFuego\lib;
+<?php namespace CalleHunefalk\OpenFuego;
 
 class Logger {
 	
-	public static $verbose = \OpenFuego\VERBOSE;
+	public static $verbose = \CalleHunefalk\OpenFuego\VERBOSE;
 	public static $tmp;
 	
 	public static function debug($message) {
@@ -53,7 +53,7 @@ class Logger {
 	}
 	
 	private static function notify($subject, $message) {
-		mail(\OpenFuego\WEBMASTER, $subject, $message, 'From: ' . \OpenFuego\POSTMASTER);
+		mail(\OpenFuego\WEBMASTER, $subject, $message, 'From: ' . \CalleHunefalk\OpenFuego\POSTMASTER);
 	}
 	
 	private static function getTimestamp() {
