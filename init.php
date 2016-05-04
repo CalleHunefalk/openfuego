@@ -35,20 +35,6 @@ else {
 }
 
 require __DIR__ . '/vendor/autoload.php';
-// Now included via composer
-//require_once(__DIR__ . '/lib/TwitterOAuth/TwitterOAuth.php');
-//require_once(__DIR__ . '/lib/Phirehose/UserstreamPhirehose.php');
-
-spl_autoload_register(function($className) {
-		$className = str_replace('OpenFuego' . '\\', '', $className);
-		$className = strtr($className, '\\', DIRECTORY_SEPARATOR);	
-		$path = __DIR__ . '/' . $className . '.class.php';
-
-		if (is_readable($path)) {
-			include_once($path);
-		}
-});
-
 
 /* Setting miscellaneous constants */
 define(__NAMESPACE__ . '\BASE_DIR', __DIR__);
