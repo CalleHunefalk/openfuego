@@ -6,6 +6,8 @@ OpenFuego is essentially “Fuego in a box,” allowing you to monitor your own 
 
 Fuego and OpenFuego were created by [Andrew Phelps](https://twitter.com/andrewphelps) for the [Nieman Journalism Lab](http://www.niemanlab.org/). It was influenced by [Hourly Press](http://www.theatlantic.com/technology/archive/2011/08/fuego-a-bot-that-turns-the-twitter-firehose-into-a-trickle/244355/), created by Steve Farrell and Lyn Headley. OpenFuego relies heavily on @fennb’s [Phirehose](https://github.com/fennb/phirehose) library and @abraham’s [twitteroauth](https://github.com/abraham/twitteroauth) library.
 
+This repository was forked by (CalleHunefalk.com)[http://callehunefalk.com] since the original was no longer working (no commits since 2014). There has been a lot of refactored code, including the Phirehose and TwitterOAuth packages included via composer and fixing bugs. The current state is a working beta, with a lot of testing and development still needed.
+
 ### How it works
 
 1. __Curate.__ You select up to 15 Twitter users — authorities — to form the center of OpenFuego’s universe.
