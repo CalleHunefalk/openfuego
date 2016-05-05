@@ -83,6 +83,10 @@ const GOOGL_API_KEY = '';
 **/
 const EMBEDLY_API_KEY = '';
 
+/** Retry if the process dies?
+**/
+const RETRY_ON_FATAL = false;
+
 /**
   * All done, no more editing! Now run fetch.php at the command line.
 **/

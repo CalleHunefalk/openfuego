@@ -94,6 +94,16 @@ class Universe {
 			
 			catch (\PDOException $e) {
 				Logger::fatal($e);
+				
+				if(CalleHunefalk\OpenFuego\RETRY_ON_FATAL){
+					try {
+						exec('php ' . __DIR__ . '/fetch.php ');
+					}
+					catch (\Exception $ex) {
+						Logger::fatal($ex);
+					}
+				}
+				
 				die();
 			}
 		}

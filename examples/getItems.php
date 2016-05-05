@@ -14,10 +14,10 @@
  */
  
 require(__DIR__ . '../../init.php');
-use OpenFuego\lib\Getter as Getter;
+use CalleHunefalk\OpenFuego\Getter as Getter;
 
 $fuego = new Getter();
-$items = $fuego->getItems(20, 24, TRUE, TRUE); // quantity, hours, scoring, metadata
+$items = $fuego->getItems(20, 72, TRUE, TRUE); // quantity, hours, scoring, metadata
 
 print '<pre>';
 print_r($items);
