@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>OpenFuego by niemanlab</title>
+    <title>OpenFuego by CalleHunefalk</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -18,18 +18,18 @@
         <h1>OpenFuego</h1>
         <p></p>
 
-        <p class="view"><a href="https://github.com/niemanlab/openfuego">View the Project on GitHub <small>niemanlab/openfuego</small></a></p>
+        <p class="view"><a href="https://github.com/CalleHunefalk/openfuego">View the Project on GitHub <small>CalleHunefalk/openfuego</small></a></p>
 
 
         <ul>
-          <li><a href="https://github.com/niemanlab/openfuego/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/niemanlab/openfuego/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/niemanlab/openfuego">View On <strong>GitHub</strong></a></li>
+          <li><a href="https://github.com/CalleHunefalk/openfuego/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/CalleHunefalk/openfuego/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/CalleHunefalk/openfuego">View On <strong>GitHub</strong></a></li>
         </ul>
       </header>
       <section>
         <h1>
-<a name="openfuego" class="anchor" href="#openfuego"><span class="octicon octicon-link"></span></a>OpenFuego</h1>
+<a id="openfuego" class="anchor" href="#openfuego" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OpenFuego</h1>
 
 <p>OpenFuego is the open-source version of <a href="http://www.niemanlab.org/fuego">Fuego</a>, a Twitter bot created to track the future-of-journalism crowd and the links they’re sharing.</p>
 
@@ -38,28 +38,30 @@
 <p>Fuego and OpenFuego were created by <a href="https://twitter.com/andrewphelps">Andrew Phelps</a> for the <a href="http://www.niemanlab.org/">Nieman Journalism Lab</a>.</p>
 
 <h3>
-<a name="how-it-works" class="anchor" href="#how-it-works"><span class="octicon octicon-link"></span></a>How it works</h3>
+<a id="how-it-works" class="anchor" href="#how-it-works" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How it works</h3>
 
 <ol>
 <li><p><strong>Curate.</strong> You select up to 15 people — authorities — to form the center of OpenFuego’s universe.</p></li>
 <li><p><strong>Automate.</strong> OpenFuego follows those authorities, as well as all of the people they follow, up to a total of 5,000  sources. Each and every time one of those sources shares a link, OpenFuego captures it into a database with some simple analytics. OpenFuego is running in the background 24 hours a day.</p></li>
 <li><p><strong>Query.</strong> You can query OpenFuego to determine which links are being talked about most in that universe. OpenFuego does some math to strike a good balance between quality and freshness, then returns a ranked list of URLs and metadata.</p></li>
-</ol><h3>
-<a name="requirements-and-notes" class="anchor" href="#requirements-and-notes"><span class="octicon octicon-link"></span></a>Requirements and notes</h3>
+</ol>
+
+<h3>
+<a id="requirements-and-notes" class="anchor" href="#requirements-and-notes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements and notes</h3>
 
 <p>OpenFuego is a backend application that runs at the command line. There is nothing to look at! It’s up to you to build a cool webpage or app that does something with the data. To see an example, visit <a href="http://www.niemanlab.org/fuego">Fuego</a>.</p>
 
 <p>OpenFuego is PHP. It requires PHP 5.3.0 or higher and the cURL library. You probably need root access. It probably doesn’t work in Windows. OpenFuego is designed to run continuously in background processes, like a daemon. If you know much about programming, you know PHP is a really bad language for this type of program. PHP is what I knew when I first sat down to write the program, and by the time it was big and complex, it would have been too much work to learn a different language and start from scratch.</p>
 
 <h3>
-<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h3>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h3>
 
 <p>Follow the instructions in config.php. Create a MySQL database and enter the credentials in that file, along with Twitter credentials and optional (but recommended) API keys for Bitly, Goo.gl, and Embed.ly.</p>
 
 <p>If you write any scripts that query OpenFuego, include init.php at the top of the file. The application resides in the OpenFuego <a href="http://php.net/manual/en/language.namespaces.php">namespace</a>.</p>
 
 <h3>
-<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h3>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h3>
 
 <p>Once config.php is edited, run <code>fetch.php</code> at the command line. You may or not get further instructions, depending on whether your version of PHP is compiled with process control.</p>
 
@@ -67,13 +69,15 @@
 
 <p>See examples/getLinks.php for a dead-simple way to query OpenFuego for links.</p>
 
-<hr><h3>
-<a name="about-nieman-journalism-lab" class="anchor" href="#about-nieman-journalism-lab"><span class="octicon octicon-link"></span></a>About Nieman Journalism Lab</h3>
+<hr>
+
+<h3>
+<a id="about-nieman-journalism-lab" class="anchor" href="#about-nieman-journalism-lab" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About Nieman Journalism Lab</h3>
 
 <p>The <a href="http://www.niemanlab.org/">Nieman Journalism Lab</a> (<a href="https://twitter.com/niemanlab">@niemanlab</a>) is a collaborative attempt to figure out how quality journalism can survive and thrive in the Internet age. It’s a project of the <a href="http://www.nieman.harvard.edu">Nieman Foundation for Journalism</a> at Harvard University.</p>
       </section>
       <footer>
-        <p>This project is maintained by <a href="https://github.com/niemanlab">niemanlab</a></p>
+        <p>This project is maintained by <a href="https://github.com/CalleHunefalk">CalleHunefalk</a></p>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
