@@ -142,7 +142,7 @@ class Metadata {
 				$twitter = new TwitterHandle();
 				$status = $twitter->get("statuses/show/$id_str", array('include_entities' => false));
 	
-				if (preg_match("/2../", $twitter->http_code)) {
+				if (preg_match("/2../", $twitter->getLastHttpCode())) {
 					$id_str = $status['id_str'];
 					$screen_name = $status['user']['screen_name'];
 					$text = $status['text'];
@@ -167,7 +167,7 @@ class Metadata {
 					}
 				}
 	
-				elseif (preg_match("/4../", $twitter->http_code)) {
+				elseif (preg_match("/4../", $twitter->getLastHttpCode())) {
 					$status = $this->updateTweet($link_id);
 					$id_str = $status['id_str'];
 					$screen_name = $status['screen_name'];
@@ -176,7 +176,7 @@ class Metadata {
 				}
 							
 				else {
-					Logger::error("Twitter error {$twitter->http_code}");
+					Logger::error("Twitter error {$twitter->getLastHttpCode()}");
 					return FALSE;
 				}
 			}

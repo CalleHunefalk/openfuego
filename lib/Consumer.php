@@ -29,7 +29,7 @@ class Consumer {
 		
 		// Sanity checks
 		if (!is_dir($queueDir)) {
-			throw new ErrorException('Invalid directory: ' . $queueDir);
+			throw new \ErrorException('Invalid directory: ' . $queueDir);
 		}
 	}
 	

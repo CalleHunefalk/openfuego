@@ -19,8 +19,8 @@ class UrlExpander {
 	
 
 	 public function __construct() {
-		$this->_bitly_pro_domains = unserialize(\OpenFuego\BITLY_PRO_DOMAINS);
-		$this->_short_domains = unserialize(\OpenFuego\SHORT_DOMAINS);
+		$this->_bitly_pro_domains = unserialize(\CalleHunefalk\OpenFuego\BITLY_PRO_DOMAINS);
+		$this->_short_domains = unserialize(\CalleHunefalk\OpenFuego\SHORT_DOMAINS);
 
 		if (defined('\CalleHunefalk\OpenFuego\BITLY_USERNAME')) {
 			 $this->_bitly_username = \CalleHunefalk\OpenFuego\BITLY_USERNAME;

@@ -14,7 +14,7 @@ class Curl {
 	public function __construct() {
 
 		if (!function_exists('curl_init')) {
-			throw new Exception("cURL must be installed to continue.");
+			throw new \ErrorException("cURL must be installed to continue.");
 		}
 		
 		$this->_headers = array(

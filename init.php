@@ -40,6 +40,12 @@ require __DIR__ . '/vendor/autoload.php';
 define(__NAMESPACE__ . '\BASE_DIR', __DIR__);
 define(__NAMESPACE__ . '\TMP_DIR', BASE_DIR . '/tmp');
 define(__NAMESPACE__ . '\POSTMASTER', __NAMESPACE__ . '@' . __NAMESPACE__ . '.local'); // from address on error e-mails
+/* Constants Phirehose may be looking for, without namespace prefix */
+define('TWITTER_SCREEN_NAME', TWITTER_SCREEN_NAME);
+define('TWITTER_CONSUMER_KEY', TWITTER_CONSUMER_KEY);
+define('TWITTER_CONSUMER_SECRET', TWITTER_CONSUMER_SECRET);
+define('TWITTER_OAUTH_TOKEN', TWITTER_OAUTH_TOKEN);
+define('TWITTER_OAUTH_SECRET', TWITTER_OAUTH_SECRET);
 
 if (!is_dir(TMP_DIR)) {
 	mkdir(TMP_DIR);

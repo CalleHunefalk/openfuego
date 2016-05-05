@@ -34,6 +34,8 @@ class Collector extends \OauthPhirehose {
 		$this->queueDir = $queueDir;
 		$this->rotateInterval = $rotateInterval;
 		$this->_pcntlEnabled = function_exists('pcntl_signal_dispatch') ? TRUE : FALSE;
+		$this->consumerKey = \CalleHunefalk\OpenFuego\TWITTER_CONSUMER_KEY;
+		$this->consumerSecret = \CalleHunefalk\OpenFuego\TWITTER_CONSUMER_SECRET;
 		
 		// Call parent constructor
 		return parent::__construct($token, $secret, \Phirehose::METHOD_FILTER);
@@ -80,7 +82,7 @@ class Collector extends \OauthPhirehose {
 	
 		// If it's not a valid resource, we need to create one
 		if (!is_dir($this->queueDir) || !is_writable($this->queueDir)) {
-			throw new Exception('Unable to write to queueDir: ' . $this->queueDir);
+			throw new \ErrorException('Unable to write to queueDir: ' . $this->queueDir);
 		}
 	
 		// Construct stream file name, log and open
@@ -90,7 +92,7 @@ class Collector extends \OauthPhirehose {
 		
 		// Okay?
 		if (!is_resource($this->statusStream)) {
-			throw new Exception('Unable to open stream file for writing: ' . $this->streamFile);
+			throw new \ErrorException('Unable to open stream file for writing: ' . $this->streamFile);
 		}
 	
 		// If we don't have a last rotated time, it's effectively now
@@ -117,7 +119,7 @@ class Collector extends \OauthPhirehose {
 		
 		// Did it work?
 		if (!file_exists($queueFile)) {
-			throw new Exception('Failed to rotate queue file to: ' . $queueFile);
+			throw new \ErrorException('Failed to rotate queue file to: ' . $queueFile);
 		}
 		
 		// At this point, all looking good - the next call to getStream() will create a new active file

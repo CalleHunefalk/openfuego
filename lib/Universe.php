@@ -66,8 +66,8 @@ class Universe {
 		foreach ($authorities as $authority) {
 			$authority_friends_ids = $twitter->get('friends/ids', array('screen_name' => $authority['screen_name']));
 
-			if ($twitter->http_code != 200) {
-				$error_message = __METHOD__ . " failed, Twitter error {$twitter->http_code}. Dying.";
+			if ($twitter->getLastHttpCode() != 200) {
+				$error_message = __METHOD__ . " failed, Twitter error {$twitter->getLastHttpCode()}. Dying.";
 				Logger::fatal($error_message);
 				die();
 			}
